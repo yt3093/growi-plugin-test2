@@ -1,18 +1,26 @@
 .github-alert {
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
-  border-left: 0.25em solid var(--gha-color);
+  border-left: 0.25em solid var(--gha-border-color);
   color: inherit;
+}
+
+.github-alert > :first-child {
+  margin-top: 0;
+}
+
+.github-alert > :last-child {
+  margin-bottom: 0;
 }
 
 .github-alert > .github-alert-title {
   display: flex;
+  font-weight: 500;
   align-items: center;
+  line-height: 1;
   gap: 0.5rem;
-  font-weight: 600;
-  font-size: 0.875em;
   color: var(--gha-color);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .github-alert-title .octicon {
@@ -20,20 +28,18 @@
   flex-shrink: 0;
 }
 
-.github-alert > *:last-child {
-  margin-bottom: 0;
-}
+/* ライトモード */
+.github-alert-note      { --gha-border-color: #0969da; --gha-color: #0969da; }
+.github-alert-tip       { --gha-border-color: #1a7f37; --gha-color: #1a7f37; }
+.github-alert-important { --gha-border-color: #8250df; --gha-color: #8250df; }
+.github-alert-warning   { --gha-border-color: #9a6700; --gha-color: #9a6700; }
+.github-alert-caution   { --gha-border-color: #cf222e; --gha-color: #d1242f; }
 
-.github-alert-note      { --gha-color: #1f6feb; }
-.github-alert-tip       { --gha-color: #1a7f37; }
-.github-alert-important { --gha-color: #8250df; }
-.github-alert-warning   { --gha-color: #9a6700; }
-.github-alert-caution   { --gha-color: #d1242f; }
-
+/* ダークモード */
 @media (prefers-color-scheme: dark) {
-  .github-alert-note      { --gha-color: #4493f8; }
-  .github-alert-tip       { --gha-color: #3fb950; }
-  .github-alert-important { --gha-color: #ab7df8; }
-  .github-alert-warning   { --gha-color: #d29922; }
-  .github-alert-caution   { --gha-color: #f85149; }
+  .github-alert-note      { --gha-border-color: #1f6feb; --gha-color: #4493f8; }
+  .github-alert-tip       { --gha-border-color: #238636; --gha-color: #3fb950; }
+  .github-alert-important { --gha-border-color: #8957e5; --gha-color: #ab7df8; }
+  .github-alert-warning   { --gha-border-color: #9e6a03; --gha-color: #d29922; }
+  .github-alert-caution   { --gha-border-color: #da3633; --gha-color: #f85149; }
 }
