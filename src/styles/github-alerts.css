@@ -1,7 +1,9 @@
 .github-alert {
+  background: none;
+  border: 0;
+  border-left: 0.25em solid var(--gha-border-color, #d0d7de);
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
-  border-left: 0.25em solid var(--gha-border-color);
   color: inherit;
 }
 
@@ -19,7 +21,7 @@
   align-items: center;
   line-height: 1;
   gap: 0.5rem;
-  color: var(--gha-color);
+  color: var(--gha-color, inherit);
   margin-bottom: 0.5rem;
 }
 
@@ -29,17 +31,24 @@
 }
 
 /* ライトモード */
-.github-alert-note      { --gha-border-color: #0969da; --gha-color: #0969da; }
-.github-alert-tip       { --gha-border-color: #1a7f37; --gha-color: #1a7f37; }
-.github-alert-important { --gha-border-color: #8250df; --gha-color: #8250df; }
-.github-alert-warning   { --gha-border-color: #9a6700; --gha-color: #9a6700; }
-.github-alert-caution   { --gha-border-color: #cf222e; --gha-color: #d1242f; }
+.github-alert.github-alert-note      { --gha-border-color: #0969da; --gha-color: #0969da; }
+.github-alert.github-alert-tip       { --gha-border-color: #1a7f37; --gha-color: #1a7f37; }
+.github-alert.github-alert-important { --gha-border-color: #8250df; --gha-color: #8250df; }
+.github-alert.github-alert-warning   { --gha-border-color: #9a6700; --gha-color: #9a6700; }
+.github-alert.github-alert-caution   { --gha-border-color: #cf222e; --gha-color: #d1242f; }
 
-/* ダークモード */
+/* ダークモード: OS 設定ベース */
 @media (prefers-color-scheme: dark) {
-  .github-alert-note      { --gha-border-color: #1f6feb; --gha-color: #4493f8; }
-  .github-alert-tip       { --gha-border-color: #238636; --gha-color: #3fb950; }
-  .github-alert-important { --gha-border-color: #8957e5; --gha-color: #ab7df8; }
-  .github-alert-warning   { --gha-border-color: #9e6a03; --gha-color: #d29922; }
-  .github-alert-caution   { --gha-border-color: #da3633; --gha-color: #f85149; }
+  .github-alert.github-alert-note      { --gha-border-color: #1f6feb; --gha-color: #4493f8; }
+  .github-alert.github-alert-tip       { --gha-border-color: #238636; --gha-color: #3fb950; }
+  .github-alert.github-alert-important { --gha-border-color: #8957e5; --gha-color: #ab7df8; }
+  .github-alert.github-alert-warning   { --gha-border-color: #9e6a03; --gha-color: #d29922; }
+  .github-alert.github-alert-caution   { --gha-border-color: #da3633; --gha-color: #f85149; }
 }
+
+/* ダークモード: GROWI (Bootstrap 5) の data-bs-theme ベース */
+[data-bs-theme="dark"] .github-alert.github-alert-note      { --gha-border-color: #1f6feb; --gha-color: #4493f8; }
+[data-bs-theme="dark"] .github-alert.github-alert-tip       { --gha-border-color: #238636; --gha-color: #3fb950; }
+[data-bs-theme="dark"] .github-alert.github-alert-important { --gha-border-color: #8957e5; --gha-color: #ab7df8; }
+[data-bs-theme="dark"] .github-alert.github-alert-warning   { --gha-border-color: #9e6a03; --gha-color: #d29922; }
+[data-bs-theme="dark"] .github-alert.github-alert-caution   { --gha-border-color: #da3633; --gha-color: #f85149; }
